@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Deploy a Web Application Using Docker and NGINX on Your Own Server</title>
+</head>
+<body>
+
+
+    <nav>
+        <b>Navigasi:</b> 
+        <a href="blog.html">Blog List</a> | 
+        <a href="blog-detail.html">Blog Detail</a> | 
+        <a href="cv.html">CV</a> | 
+        <a href="form.html">Form</a> | 
+        <a href="index.html">Film</a>
+    </nav>
+    <hr>
+
+    <img src="OIP.jpg" alt="Cover Blog" width="100%">
+
+    <br><br>
+
+    <table cellpadding="4" cellspacing="0" border="0">
+        <tr>
+            <td valign="middle">
+                <img src="Johan.jpg" alt="Author Photo" width="40" height="40">
+            </td>
+            <td valign="middle">
+                <b>Johan Samosir</b><br>
+                <small>Posted on May 31</small>
+            </td>
+        </tr>
+    </table>
+
+    <h1>How to Deploy a Web Application Using Docker and NGINX on Your Own Server</h1>
+
+    <p><small>#webdev &nbsp; #devops</small></p>
+
+    <hr>
+
+    <article>
+        <p>
+            Deploying a web application doesn’t need to be a complicated process. With Docker, NGINX, and your own server, you can get your app live in no time.<br>
+            In this blog, I’ll show you step by step how to serve your app with a domain, route traffic with NGINX, and run it all inside a Docker container. This guide is specifically tailored for a Linux-based server.
+        </p>
+
+        <p>
+            <strong>Step 1 : Setup docker</strong><br>
+            First, let’s set up Docker. I’m using a simple React app as an example, but feel free to use any application or codebase of your choice. Create a Dockerfile in your project directory to define how your app should be containerized.<br>
+            Dockerfile:
+        </p>
+
+        <pre><code>FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD [ "npm", "start" ]</code></pre>
+
+        <p>
+            <strong>Step 2 : Build and Run the Docker Container (on your server)</strong><br>
+            Once you’ve created your Dockerfile, the next step is to build your Docker image and run it to make sure everything is working as expected.
+        </p>
+
+        <p>
+            <strong>Conclusion</strong><br>
+            Deploying your web application using Docker and NGINX on your own server might sound intimidating at first, but once you break it down, it’s quite manageable.<br>
+            By containerizing your app, setting up NGINX as a reverse proxy, and linking everything together on your VPS, you gain full control over your deployment process.
+        </p>
+    </article>
+
+    <hr>
+
+    <section>
+        <h3>Top comments (0)</h3>
+        <table cellpadding="4" cellspacing="0" border="0">
+            <tr>
+                <td valign="top">
+                    <img src="profile.png" alt="Profile Photo" width="35" height="35">
+                </td>
+                <td valign="top">
+                    <textarea rows="3" placeholder="Add to the discussion" cols="40"></textarea>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+</body>
+</html>
